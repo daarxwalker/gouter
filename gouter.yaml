@@ -1,0 +1,4 @@
+hosts:
+  - 'http://localhost:3001/admin/::/admin/'
+  - 'http://localhost:9000/::/backend/'
+  - 'http://localhost:3000/::/'
