@@ -73,7 +73,10 @@ func (g *gouter) run(c config) {
 	for _, item := range c.Hosts {
 		parts := strings.Split(item, "::")
 		fmt.Println(fmt.Sprintf("- [%s] FORWARDED TO ORIGIN [%s]", parts[1], parts[0]))
-		remote, _ := url.Parse(parts[0])
+		remote, err := url.Parse(parts[0])
+		if err != nil {
+			log.Fatalln(err)
+		}
 		proxy := httputil.NewSingleHostReverseProxy(remote)
 
 		proxy.ErrorHandler = g.handleCancelError
