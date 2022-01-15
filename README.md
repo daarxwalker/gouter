@@ -25,6 +25,7 @@ hosts:
 
 ## Goals
 - [ x ] Working reverse proxy
+- [  ] Error logs
 - [  ] TLS
 - [  ] Load balancing
 - [  ] Tests
